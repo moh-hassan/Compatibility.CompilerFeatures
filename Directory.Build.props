@@ -1,14 +1,20 @@
 <Project>
-	<PropertyGroup>
+    <PropertyGroup>
+        <LangVersion>latest</LangVersion>
+        <Nullable>enable</Nullable>
         <PackageOutputPath>$(MSBuildThisFileDirectory)build</PackageOutputPath>
-        <NoWarn>CS1591;CS0219;8002;NU5125</NoWarn>			
-	</PropertyGroup>
-	
-	<!-- Enable building .NET Framework projects on any machine with at least MSBuild or the .NET Core SDK installed.-->
-	<ItemGroup>
-		<PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.3">
-			<IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
-			<PrivateAssets>all</PrivateAssets>
-		</PackageReference>		
-	</ItemGroup>
+        <NoWarn>CS8021,CS1591;CS0219;8002;NU5125</NoWarn>
+        <Version Condition="'$(VersionSuffix)' != ''">$(VersionSuffix)</Version>
+        <Version Condition="'$(VersionSuffix)' == ''">0.0.0</Version>
+        <Copyright>Copyright © 2022, Mohamed Hassan</Copyright>
+        <Authors>Mohamed Hassan</Authors>
+    </PropertyGroup>
+
+    <!-- Enable building .NET Framework projects on any machine with at least MSBuild or the .NET Core SDK installed.-->
+    <ItemGroup>
+        <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.3">
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+            <PrivateAssets>all</PrivateAssets>
+        </PackageReference>
+    </ItemGroup>
 </Project>
