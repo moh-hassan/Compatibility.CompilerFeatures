@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFrameworks>net472;net6.0;net45;net7.0</TargetFrameworks>
+        <Nullable>enable</Nullable>
+        <LangVersion>latest</LangVersion>
+        <!--<TreatWarningsAsErrors>true</TreatWarningsAsErrors>-->
+    </PropertyGroup>
+
+    <!--<ItemGroup>
+        <PackageReference Include="Compatibility.CompilerFeatures" Version="1.0.0">
+            <PrivateAssets>All</PrivateAssets>
+               <IncludeAssets>runtime;build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>  
+        </PackageReference>
+    </ItemGroup>-->
+
+    <ItemGroup>
+        <Compile Remove="contentfiles\cs\any\*.cs" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\..\src\Compatibility.CompilerFeatures\Compatibility.CompilerFeatures.csproj">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </ProjectReference>
+    </ItemGroup>
+
+</Project>

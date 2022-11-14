@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFrameworks>netstandard2.0;netstandard2.1;net472;net461;net45</TargetFrameworks>
+        <LangVersion>latest</LangVersion>
+        <IsPackable>true</IsPackable>
+        <IncludeBuildOutput>false</IncludeBuildOutput>
+        <ContentTargetFolders>contentFiles</ContentTargetFolders>
+        <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+        <!--<DisableImplicitFrameworkReferences>true</DisableImplicitFrameworkReferences>-->
+        <GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
+        <!--NU5017-->
+        <NoWarn>CS8021</NoWarn>
+        <NoBuild>true</NoBuild>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <SuppressDependenciesWhenPacking>true</SuppressDependenciesWhenPacking>
+        <!--<PackageVersion>1.0.0</PackageVersion>-->
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Compile Remove="contentfiles\cs\any\*.cs" />
+        <Compile Include="ContentFiles\cs\any\*.cs" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Content Include="contentfiles\cs\any\*.cs">
+            <IncludeInPackage>true</IncludeInPackage>
+            <BuildAction>Compile</BuildAction>
+            <copyToOutput>true</copyToOutput>
+        </Content>
+    </ItemGroup>
+
+</Project>
