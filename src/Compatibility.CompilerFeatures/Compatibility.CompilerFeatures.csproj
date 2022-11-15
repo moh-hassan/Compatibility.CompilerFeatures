@@ -1,20 +1,45 @@
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
-        <TargetFrameworks>netstandard2.0;netstandard2.1;net472;net461;net45</TargetFrameworks>
-        <LangVersion>latest</LangVersion>
-        <IsPackable>true</IsPackable>
+        <TargetFrameworks>netstandard2.0;netstandard2.1;net472;net461;net45;net7.0</TargetFrameworks>
         <IncludeBuildOutput>false</IncludeBuildOutput>
+        <!--<NoBuild>true</NoBuild>-->
         <ContentTargetFolders>contentFiles</ContentTargetFolders>
-        <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
         <!--<DisableImplicitFrameworkReferences>true</DisableImplicitFrameworkReferences>-->
-        <GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
-        <!--NU5017-->
-        <NoWarn>CS8021</NoWarn>
-        <NoBuild>true</NoBuild>
-        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-        <SuppressDependenciesWhenPacking>true</SuppressDependenciesWhenPacking>
-        <!--<PackageVersion>1.0.0</PackageVersion>-->
+        <!--<GenerateAssemblyInfo>false</GenerateAssemblyInfo>-->
+        <!--<GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>-->
+        <!--<SuppressDependenciesWhenPacking>true</SuppressDependenciesWhenPacking>-->
     </PropertyGroup>
+
+    <PropertyGroup>
+        <IsPackable>true</IsPackable>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <PackageId>Compatibility.CompilerFeatures</PackageId>
+        <Copyright>Copyright © 2022, Mohamed Hassan</Copyright>
+        <PackageDescription>
+            Source code only package to support c# 11 `required` feature of net7, `init-only and record` of c# 9 in the old frameworks net4x, netstandard2.x, NET6 and NET5.
+        </PackageDescription>
+        <Authors>Mohamed Hassan</Authors>
+        <Product>Compatibility.CompilerFeatures</Product>
+        <PackageProjectUrl>
+            https://github.com/moh-hassan/Compatibility.CompilerFeatures
+        </PackageProjectUrl>
+        <PackageIconFullPath>..\..\roslyn-compiler.png</PackageIconFullPath>
+        <RepositoryUrl>https://github.com/moh-hassan/Compatibility.CompilerFeatures</RepositoryUrl>
+        <PackageTags>
+            c#11 c#9 IsExternalInit required CompilerFeatureRequired record init-only roslyne-compiler
+        </PackageTags>
+        <PackageReleaseNotes>https://github.com/moh-hassan/Compatibility.CompilerFeatures/blob/main/CHANGELOG.md</PackageReleaseNotes>
+        <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+        <Title>Compatibility CompilerFeatures</Title>
+        <PackageLicenseFile>LICENSE</PackageLicenseFile>
+        <PackageIcon>roslyn-compiler.png</PackageIcon>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Include="..\..\LICENSE" Pack="true" PackagePath="" />
+        <None Include="..\..\roslyn-compiler.png" Pack="true" PackagePath="" />
+    </ItemGroup>
+
 
     <ItemGroup>
         <Compile Remove="contentfiles\cs\any\*.cs" />
@@ -28,5 +53,9 @@
             <copyToOutput>true</copyToOutput>
         </Content>
     </ItemGroup>
+
+    <!--<ItemGroup>
+      <Compile Remove="contentfiles\cs\any\SetsRequiredMembersAttribute.cs" />
+    </ItemGroup>-->
 
 </Project>

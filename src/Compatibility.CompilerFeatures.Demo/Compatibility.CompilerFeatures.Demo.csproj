@@ -2,21 +2,17 @@
 
     <PropertyGroup>
         <OutputType>Exe</OutputType>
-        <TargetFrameworks>net472;net6.0;net45;net7.0</TargetFrameworks>
-        <Nullable>enable</Nullable>
-        <LangVersion>latest</LangVersion>
-        <!--<TreatWarningsAsErrors>true</TreatWarningsAsErrors>-->
+        <TargetFrameworks>net472;net45;net6.0;net7.0</TargetFrameworks>
+        <Copyright>Copyright © 2022, Mohamed Hassan</Copyright>
+        <Authors>Mohamed Hassan</Authors>
     </PropertyGroup>
-
-    <!--<ItemGroup>
-        <PackageReference Include="Compatibility.CompilerFeatures" Version="1.0.0">
-            <PrivateAssets>All</PrivateAssets>
-               <IncludeAssets>runtime;build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>  
-        </PackageReference>
-    </ItemGroup>-->
 
     <ItemGroup>
         <Compile Remove="contentfiles\cs\any\*.cs" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Include="..\..\common\Person.cs" Link="Person.cs" />
     </ItemGroup>
 
     <ItemGroup>

@@ -11,7 +11,8 @@
 // https://github.com/dotnet/runtime/blob/fdd104ec5e1d0d2aa24a6723995a98d0124f724b/src/libraries/System.Private.CoreLib/src/System/Runtime/CompilerServices/CompilerFeatureRequiredAttribute.cs
 #endregion
 #pragma warning disable IDE0073
-#if NETSTANDARD2_0 || NETSTANDARD2_1 || NET || NET5_0 || NET6_0 || NET45 || NET452 || NET461 || NET462 || NET47 || NET471 || NET472 || NET48
+#if NETSTANDARD2_0 || NETSTANDARD2_1 || NET5_0 || NET6_0 || NET45 || NET452 || NET461 || NET462 || NET47 || NET471 || NET472 || NET48 || NET481
+
 namespace System.Runtime.CompilerServices
 {
     /// <summary>
