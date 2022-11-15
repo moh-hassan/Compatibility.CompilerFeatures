@@ -1,33 +1,52 @@
-using Compatibility.CompilerFeatures.Demo;
+using Compatibility.CompilerFeatures.Data;
 using NUnit.Framework;
-using System;
 
-namespace Compatibility.CompilerFeatures.Test
+namespace Compatibility.CompilerFeatures.Test;
+public class Tests
 {
-    public class Tests
+    [Test]
+    public void Require_feature_should_be_compiled_in_old_frameworks()
     {
-        private DailyTemperature[] data = new DailyTemperature[]
-        {
-            new DailyTemperature(HighTemp: 57, LowTemp: 30),
-            new DailyTemperature(60, 35),
-            new DailyTemperature(63, 33),
-            new DailyTemperature(68, 29),
-        };
+        //Arrange
+        //Next commented line raise Error CS9035  Required member 'Person.Id' must be set in the object initializer or attribute constructor.
+        //var person = new Person {Name = "jack" };
 
-        [SetUp]
-        public void Setup()
-        {
-        }
+        //Act
+        //ok 
+        var person = new Person { Id = 1, Name = "jack" };
 
-        [Test]
-        public void Require_and_record_init_test()
-        {
-            Console.WriteLine("--------------required feature of c# 11 in net4x-------");
-            var person = new Person { Id = 1, Name = "jack" };
-            Console.WriteLine($"id= {person.Id}, Name={person.Name}");
-            Console.WriteLine("--------------record feature of c# 9  in net4x-------");
-            foreach (var item in data)
-                Console.WriteLine(item);
-        }
+        //Assert
+        Assert.Pass();
+    }
+
+    [Test]
+    public void Require_feature_with_SetsRequiredMembersAttribute_should_be_compiled_in_old_frameworks()
+    {
+        //Arrange
+        //Act
+        //ok, no CS9035  Required member error
+        var emp = new Employee();
+             
+        //ok, no CS9035  Required member error
+        var emp2 = new Employee(1);
+        //Assert
+        Assert.Pass();
+    }
+
+    [Test]
+    public void Record_in_c9_should_be_compiled()
+    {
+        var customer = new Customer ("jack", "Mido" );
+        var customer2 = new Customer2 {FirstName = "jack",LastName = "Mido"};
+        Assert.Pass();
+    }
+
+    [Test]
+    public void record_using_with()
+    {
+        Person3 personA = new("Nancy", "Davolio") { PhoneNumbers = new string[1] };
+        var personB = personA with { };
+        Assert.That(personA == personB); 
+
     }
 }

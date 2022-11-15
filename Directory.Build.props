@@ -3,7 +3,7 @@
         <LangVersion>latest</LangVersion>
         <Nullable>enable</Nullable>
         <PackageOutputPath>$(MSBuildThisFileDirectory)build</PackageOutputPath>
-        <NoWarn>CS8021,CS1591;CS0219;8002;NU5125</NoWarn>
+        <NoWarn>S125,S1481;CS8021,CS1591;CS0219;8002;NU5125;NU5128</NoWarn>
         <Version Condition="'$(VersionSuffix)' != ''">$(VersionSuffix)</Version>
         <Version Condition="'$(VersionSuffix)' == ''">0.0.0</Version>
         <Copyright>Copyright © 2022, Mohamed Hassan</Copyright>
