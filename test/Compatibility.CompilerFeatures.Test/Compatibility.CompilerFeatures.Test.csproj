@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFrameworks>net472;net6.0;net45;net7.0</TargetFrameworks>
+        <TargetFrameworks>net472;net461;net45;net6.0;net7.0</TargetFrameworks>
         <IsPackable>false</IsPackable>
         <Copyright>Copyright © 2022, Mohamed Hassan</Copyright>
         <Authors>Mohamed Hassan</Authors>
@@ -18,13 +18,13 @@
     <ItemGroup>
         <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.4.0" />
         <PackageReference Include="NUnit" Version="3.13.3" />
-        <PackageReference Include="NUnit3TestAdapter" Version="4.3.0" />
+        <PackageReference Include="NUnit3TestAdapter" Version="4.3.1" />
     </ItemGroup>
 
     <ItemGroup>
         <ProjectReference Include="..\..\src\Compatibility.CompilerFeatures\Compatibility.CompilerFeatures.csproj">
-            <PrivateAssets>all</PrivateAssets>
-            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+            <!--<PrivateAssets>all</PrivateAssets>-->
+            <IncludeAssets>all</IncludeAssets>
         </ProjectReference>
     </ItemGroup>
 </Project>

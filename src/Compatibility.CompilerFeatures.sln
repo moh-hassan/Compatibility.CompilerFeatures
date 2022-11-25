@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Compatibility.CompilerFeatu
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Compatibility.CompilerFeatures.Demo", "Compatibility.CompilerFeatures.Demo\Compatibility.CompilerFeatures.Demo.csproj", "{E1FCBB1D-28E4-433A-8A1B-ACF67EFF47FC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Compatibility.CompilerFeatures.Test", "..\test\Compatibility.CompilerFeatures.Test\Compatibility.CompilerFeatures.Test.csproj", "{1BB01108-7C82-4E4D-836A-5785C66EF64A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Compatibility.CompilerFeatures.Test", "..\test\Compatibility.CompilerFeatures.Test\Compatibility.CompilerFeatures.Test.csproj", "{B0ACE3AA-78DA-4021-8A9B-0785C89CD423}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{E1FCBB1D-28E4-433A-8A1B-ACF67EFF47FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E1FCBB1D-28E4-433A-8A1B-ACF67EFF47FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E1FCBB1D-28E4-433A-8A1B-ACF67EFF47FC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1BB01108-7C82-4E4D-836A-5785C66EF64A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1BB01108-7C82-4E4D-836A-5785C66EF64A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1BB01108-7C82-4E4D-836A-5785C66EF64A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1BB01108-7C82-4E4D-836A-5785C66EF64A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0ACE3AA-78DA-4021-8A9B-0785C89CD423}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0ACE3AA-78DA-4021-8A9B-0785C89CD423}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0ACE3AA-78DA-4021-8A9B-0785C89CD423}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0ACE3AA-78DA-4021-8A9B-0785C89CD423}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

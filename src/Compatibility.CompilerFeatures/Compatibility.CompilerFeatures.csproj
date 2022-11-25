@@ -1,22 +1,23 @@
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
-        <TargetFrameworks>netstandard2.0;netstandard2.1;net472;net461;net45;net7.0</TargetFrameworks>
+        <!--net5,6,7 for type forwrding in multi-target projects-->
+        <TargetFrameworks>
+            netstandard2.0;net472;net461;net45;net7.0;net6.0;net5.0;
+        </TargetFrameworks>
         <IncludeBuildOutput>false</IncludeBuildOutput>
-        <!--<NoBuild>true</NoBuild>-->
+        <NoBuild>true</NoBuild>
         <ContentTargetFolders>contentFiles</ContentTargetFolders>
-        <!--<DisableImplicitFrameworkReferences>true</DisableImplicitFrameworkReferences>-->
-        <!--<GenerateAssemblyInfo>false</GenerateAssemblyInfo>-->
-        <!--<GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>-->
-        <!--<SuppressDependenciesWhenPacking>true</SuppressDependenciesWhenPacking>-->
+        <GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
+        <SuppressDependenciesWhenPacking>true</SuppressDependenciesWhenPacking>
     </PropertyGroup>
 
-    <PropertyGroup>
+    <PropertyGroup Label="Nuget">
         <IsPackable>true</IsPackable>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <PackageId>Compatibility.CompilerFeatures</PackageId>
         <Copyright>Copyright © 2022, Mohamed Hassan</Copyright>
         <PackageDescription>
-            Source code only package to support c# 11 `required` feature of net7, `init-only and record` of c# 9 in the old frameworks net4x, netstandard2.x, NET6 and NET5.
+            Source code only package to support c# 11 `required` feature of net7, `init-only and record` of c# 9 in the old frameworks net4x, netstandard2.x.
         </PackageDescription>
         <Authors>Mohamed Hassan</Authors>
         <Product>Compatibility.CompilerFeatures</Product>
@@ -40,22 +41,11 @@
         <None Include="..\..\roslyn-compiler.png" Pack="true" PackagePath="" />
     </ItemGroup>
 
-
-    <ItemGroup>
-        <Compile Remove="contentfiles\cs\any\*.cs" />
-        <Compile Include="ContentFiles\cs\any\*.cs" />
-    </ItemGroup>
-
     <ItemGroup>
         <Content Include="contentfiles\cs\any\*.cs">
             <IncludeInPackage>true</IncludeInPackage>
             <BuildAction>Compile</BuildAction>
-            <copyToOutput>true</copyToOutput>
+            <copyToOutput>false</copyToOutput>
         </Content>
     </ItemGroup>
-
-    <!--<ItemGroup>
-      <Compile Remove="contentfiles\cs\any\SetsRequiredMembersAttribute.cs" />
-    </ItemGroup>-->
-
 </Project>

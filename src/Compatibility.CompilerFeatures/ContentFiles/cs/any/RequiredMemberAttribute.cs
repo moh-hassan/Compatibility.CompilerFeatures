@@ -10,8 +10,12 @@
 
 #endregion
 
-#if NETSTANDARD2_0 || NETSTANDARD2_1 || NET5_0 || NET6_0 || NET45 || NET452 || NET461 || NET462 || NET47 || NET471 || NET472 || NET48 || NET481
+
 #pragma warning disable IDE0073
+#if NET7_0
+    using System.Runtime.CompilerServices;
+    [assembly: TypeForwardedTo(typeof(RequiredMemberAttribute))]
+#else
 namespace System.Runtime.CompilerServices
 {
     /// <summary>Specifies that a type has required members or that a member is required.</summary>

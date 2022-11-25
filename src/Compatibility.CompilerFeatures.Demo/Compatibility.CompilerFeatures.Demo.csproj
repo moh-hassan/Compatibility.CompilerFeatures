@@ -2,24 +2,16 @@
 
     <PropertyGroup>
         <OutputType>Exe</OutputType>
-        <TargetFrameworks>net472;net45;net6.0;net7.0</TargetFrameworks>
+        <TargetFrameworks>net472;net461;net45;net5.0;net6.0;</TargetFrameworks>
         <Copyright>Copyright © 2022, Mohamed Hassan</Copyright>
         <Authors>Mohamed Hassan</Authors>
     </PropertyGroup>
 
     <ItemGroup>
-        <Compile Remove="contentfiles\cs\any\*.cs" />
-    </ItemGroup>
-
-    <ItemGroup>
       <Compile Include="..\..\common\Person.cs" Link="Person.cs" />
     </ItemGroup>
-
+    
     <ItemGroup>
-        <ProjectReference Include="..\..\src\Compatibility.CompilerFeatures\Compatibility.CompilerFeatures.csproj">
-            <PrivateAssets>all</PrivateAssets>
-            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-        </ProjectReference>
+      <ProjectReference Include="..\Compatibility.CompilerFeatures\Compatibility.CompilerFeatures.csproj" />
     </ItemGroup>
-
 </Project>

@@ -12,7 +12,7 @@ internal static class Program
         Console.WriteLine($"id= {person.Id}, Name={person.Name}");
         Console.WriteLine("--------------record feature of c# 9  in net4x-------");
         foreach (var item in data)
-            Console.WriteLine(item);
+            Console.WriteLine(item); 
         Console.ReadKey();
     }
     private static DailyTemperature[] data = new DailyTemperature[]
